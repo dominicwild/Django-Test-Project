@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .modelss.question import Question
+from .models.question import Question
 
 # Register your models here.
 
