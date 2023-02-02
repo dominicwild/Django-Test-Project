@@ -3,7 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
-from .models import Choice, Question
+from .modelss.choice import Choice
+from .modelss.question import Question
 
 
 def index(request):
