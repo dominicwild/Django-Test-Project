@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -6,6 +8,8 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Recipe Login</title>
+
+        <link rel="stylesheet" href="{% static 'recipe_site/login.css' %}">
     </head>
     <body>
 
@@ -14,11 +18,11 @@
         <form method="POST" action="login.html">
             <label>
                 Username
-                <input type="text" name="username" />
+                <input type="text" name="username"/>
             </label>
             <label>
                 Password
-                <input type="text" name="password" />
+                <input type="text" name="password"/>
             </label>
         </form>
 
