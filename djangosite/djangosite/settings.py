@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
+    "recipe_site.apps.RecipeSiteConfig"
 ]
 
 MIDDLEWARE = [
