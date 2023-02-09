@@ -9,22 +9,36 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Recipe Login</title>
 
-        <link rel="stylesheet" href="{% static 'recipe_site/login.css' %}">
+        <link rel="stylesheet" href="{% static 'recipe_site/css/login.css' %}">
     </head>
     <body>
 
-        <h1>Test Login</h1>
+        <div class="heading">
+            <h1>Reci.py</h1>
+        </div>
 
-        <form method="POST" action="login.html">
-            <label>
-                Username
-                <input type="text" name="username"/>
-            </label>
-            <label>
-                Password
-                <input type="text" name="password"/>
-            </label>
-        </form>
+        <div class="login-center-container">
+            <div class="login-background">
+                <img src="{% static "recipe_site/images/login-background.jpg" %}"
+                     alt="Good looking food"/>
+            </div>
+            <div class="login-container">
+                <form method="POST" action="login.html">
+                    <label>
+                    <span>
+                        Username
+                    </span>
+                        <input type="text" name="username"/>
+                    </label>
+                    <label>
+                    <span>
+                        Password
+                    </span>
+                        <input type="text" name="password"/>
+                    </label>
+                </form>
+            </div>
+        </div>
 
     </body>
 </html>

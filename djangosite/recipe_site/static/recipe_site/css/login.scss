@@ -1,0 +1,65 @@
+@import "base.scss";
+
+body {
+  background-color: orange;
+}
+
+.heading {
+  position: absolute;
+  width: 100%;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.login-center-container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .login-background {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .login-container {
+
+
+    display: flex;
+    padding: 5em;
+    background-color: white;
+    border: white;
+    border-radius: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+      text-align: center;
+      justify-content: center;
+      flex-grow: 1;
+
+      label {
+        margin: 0.5em;
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        gap: 1em;
+        align-items: center;
+
+        span {
+          text-align: center;
+          margin: 0.25em;
+        }
+      }
+    }
+  }
+}
