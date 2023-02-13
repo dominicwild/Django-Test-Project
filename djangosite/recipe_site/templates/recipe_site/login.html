@@ -23,20 +23,24 @@
                      alt="Good looking food"/>
             </div>
             <div class="login-container">
+                <h1>Login</h1>
+
                 <form method="POST" action="login.html">
-                    <label>
-                    <span>
-                        Username
-                    </span>
-                        <input type="text" name="username"/>
-                    </label>
-                    <label>
-                    <span>
-                        Password
-                    </span>
-                        <input type="text" name="password"/>
-                    </label>
+                    <div class="login-input">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+                    <div class="login-input">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                    </div>
+                    <div class="login-btn">
+                        <input type="submit" value="Login">
+                    </div>
+                    <input type="hidden" name="next" value="{{ next }}">
+                    {% csrf_token %}
                 </form>
+
             </div>
         </div>
 

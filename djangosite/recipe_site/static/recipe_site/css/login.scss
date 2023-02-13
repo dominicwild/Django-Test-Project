@@ -33,33 +33,48 @@ body {
 
   .login-container {
 
-
     display: flex;
-    padding: 5em;
+    flex-direction: column;
+
+    padding: 1.5em 2em;;
+
     background-color: white;
     border: white;
     border-radius: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+    h1 {
+      margin: 0 0 0.5em 0;
+    }
+
     form {
       display: flex;
       flex-direction: column;
-      width: 20%;
       text-align: center;
       justify-content: center;
       flex-grow: 1;
 
-      label {
-        margin: 0.5em;
+      .login-input {
+        margin: 0.5em 0;
         display: flex;
         flex-grow: 1;
         justify-content: space-between;
         gap: 1em;
         align-items: center;
 
-        span {
+        label {
           text-align: center;
           margin: 0.25em;
+          font-family: Monseratt, serif;
+        }
+      }
+
+      .login-btn {
+        margin-top: 0.5em;
+        display: flex;
+
+        input {
+          padding: 0.25em 0.75em;
         }
       }
     }
