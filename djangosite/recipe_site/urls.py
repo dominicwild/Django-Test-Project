@@ -1,7 +1,7 @@
 from django.urls import path
 
-from recipe_site.views.user_login_view import UserLoginView
-from recipe_site.views.user_logout_view import UserLogoutView
+from recipe_site.views.user_login import UserLoginView
+from recipe_site.views.user_logout import UserLogoutView
 
 app_name = 'recipe_site'
 urlpatterns = [
