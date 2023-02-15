@@ -41,6 +41,10 @@ body {
     z-index: -1;
   }
 
+  .logged-in-text {
+    color: #027e17;
+  }
+
   .login-container {
 
     display: flex;
@@ -56,6 +60,15 @@ body {
 
     h1 {
       margin: 0 0 0.5em 0;
+    }
+
+    .logout-btn {
+      text-align: center;
+
+      input {
+        font-size: 2em;
+        padding: 0.3em;
+      }
     }
 
     form {
