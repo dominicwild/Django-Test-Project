@@ -1,8 +1,9 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import path
 from django.views.generic import TemplateView
 
 
@@ -20,5 +21,6 @@ class UserLoginView(LoginView):
 
             if user is not None:
                 login(request, user)
+                return render(request, self.next)
 
         return render(request, self.template_name, {"form": form})
