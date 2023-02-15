@@ -1,20 +1,5 @@
 @import "base.scss";
 
-body {
-  background-color: orange;
-}
-
-.heading {
-  position: absolute;
-  width: 100%;
-
-  h1 {
-    text-align: center;
-    font-family: Queensides, serif;
-    font-size: 7em;
-  }
-}
-
 .errorlist.nonfield {
   list-style: none;
   text-align: left;
@@ -25,82 +10,49 @@ body {
   border-radius: 0.3em;
 }
 
-.login-center-container {
+.logged-in-text {
+  color: #027e17;
+}
 
+.logout-btn {
+  text-align: center;
+
+  input {
+    font-size: 2em;
+    padding: 0.3em;
+  }
+}
+
+form {
   display: flex;
+  flex-direction: column;
+  text-align: center;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  flex-grow: 1;
 
-  .login-background {
-    position: absolute;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-    z-index: -1;
-  }
-
-  .logged-in-text {
-    color: #027e17;
-  }
-
-  .login-container {
-
+  .login-input {
+    margin: 0.5em 0;
     display: flex;
-    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 1em;
+    align-items: center;
 
-    padding: 1.5em 2em;
-    width: 20%;
-
-    background-color: white;
-    border: white;
-    border-radius: 1em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    h1 {
-      margin: 0 0 0.5em 0;
-    }
-
-    .logout-btn {
+    label {
       text-align: center;
-
-      input {
-        font-size: 2em;
-        padding: 0.3em;
-      }
+      margin: 0.25em;
+      font-family: Monseratt, serif;
     }
+  }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
-      flex-grow: 1;
+  .login-btn {
+    margin-top: 0.5em;
+    display: flex;
 
-      .login-input {
-        margin: 0.5em 0;
-        display: flex;
-        flex-grow: 1;
-        justify-content: space-between;
-        gap: 1em;
-        align-items: center;
-
-        label {
-          text-align: center;
-          margin: 0.25em;
-          font-family: Monseratt, serif;
-        }
-      }
-
-      .login-btn {
-        margin-top: 0.5em;
-        display: flex;
-
-        input {
-          padding: 0.25em 0.75em;
-        }
-      }
+    input {
+      padding: 0.25em 0.75em;
     }
   }
 }
+
+

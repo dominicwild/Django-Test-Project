@@ -1,58 +1,35 @@
+{% extends "recipe_site/landing_base.html" %}
 {% load static %}
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Recipe Login</title>
+{% block headers %}
+    <link rel="stylesheet" href="{% static 'recipe_site/css/login.css' %}">
+{% endblock %}
 
-        <link rel="stylesheet" href="{% static 'recipe_site/css/login.css' %}">
-    </head>
-    <body>
+{% block card-content %}
+    {% if not request.user.is_authenticated %}
+        <h1>Login</h1>
 
-        <div class="heading">
-            <h1>Reci.py</h1>
-            <p>{{ request.user.is_authenticated }} - {{ request.user }}</p>
-        </div>
-
-        <div class="login-center-container">
-            <div class="login-background">
-                <img src="{% static "recipe_site/images/login-background.jpg" %}"
-                     alt="Good looking food"/>
+        <form method="POST" action="{% url 'recipe_site:login' %}">
+            <div class="login-input">
+                {{ form.username.label_tag }}
+                {{ form.username }}
             </div>
-            <div class="login-container">
-                {% if not request.user.is_authenticated %}
-                    <h1>Login</h1>
-
-                    <form method="POST" action="{% url 'recipe_site:login' %}">
-                        <div class="login-input">
-                            {{ form.username.label_tag }}
-                            {{ form.username }}
-                        </div>
-                        <div class="login-input">
-                            {{ form.password.label_tag }}
-                            {{ form.password }}
-                        </div>
-                        {{ form.non_field_errors }}
-                        <div class="login-btn">
-                            <input type="submit" value="Login">
-                        </div>
-                        <input type="hidden" name="next" value="{{ next }}">
-                        {% csrf_token %}
-                    </form>
-                {% else %}
-                    <h1>You are logged in as: <span class="logged-in-text">{{ request.user }}</span></h1>
-                    <div class="logout-btn">
-                        <input type="submit" value="Logout"
-                               onclick="window.location='{% url 'recipe_site:logout' %}';"/>
-                    </div>
-                {% endif %}
-
+            <div class="login-input">
+                {{ form.password.label_tag }}
+                {{ form.password }}
             </div>
+            {{ form.non_field_errors }}
+            <div class="login-btn">
+                <input type="submit" value="Login">
+            </div>
+            <input type="hidden" name="next" value="{{ next }}">
+            {% csrf_token %}
+        </form>
+    {% else %}
+        <h1>You are logged in as: <span class="logged-in-text">{{ request.user }}</span></h1>
+        <div class="logout-btn">
+            <input type="submit" value="Logout"
+                   onclick="window.location='{% url 'recipe_site:logout' %}';"/>
         </div>
-
-    </body>
-</html>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Recipe Login</title>
+
+        {% block headers %}
+
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'recipe_site/css/landing_base.css' %}">
+    </head>
+    <body>
+
+        <div class="heading">
+            <h1>Reci.py</h1>
+        </div>
+
+        <div class="center-container">
+            <div class="background">
+                <img src="{% static "recipe_site/images/login-background.jpg" %}"
+                     alt="Good looking food"/>
+            </div>
+            <div class="card-container">
+                {% block card-content %}
+                    <p>No card-content block defined</p>
+                {% endblock %}
+            </div>
+        </div>
+
+    </body>
+</html>
