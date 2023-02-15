@@ -1,17 +1,11 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
-from django.urls import path
-from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
 
-
-# Create your views here.
 
 class UserLoginView(LoginView):
     template_name = "recipe_site/login.html"
-    next = "recipe_site/home.html"
 
     def post(self, request, **kwargs):
         form = AuthenticationForm(request, data=request.POST)
@@ -21,6 +15,6 @@ class UserLoginView(LoginView):
 
             if user is not None:
                 login(request, user)
-                return render(request, self.next)
+                return redirect("recipe_site:home")
 
         return render(request, self.template_name, {"form": form})
