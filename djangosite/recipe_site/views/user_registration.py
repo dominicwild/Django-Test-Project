@@ -1,3 +1,4 @@
+from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -10,10 +11,8 @@ class UserRegistrationView(FormView):
     form_class = UserCreationForm
     success_url = reverse_lazy('recipe_site:home')
 
-    # def post(self, request, *args, **kwargs):
-    #     super().post(request, *args, **kwargs)
-    #
-    # def form_valid(self, form):
-    #     super().form_valid()
-    #     form.is_valid()
-    #     return HttpResponseRedirect(self.get_success_url())
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+
+        return HttpResponseRedirect(self.get_success_url())
