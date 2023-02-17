@@ -22,16 +22,18 @@
             <h1 class="logo">Reci.py</h1>
             <div class="nav-items nav-start">
                 <div>
-                    Home
+                    <a>Home</a>
                 </div>
                 <div>
-                    Recipes
+                    <a href="{% url "recipe_site:recipes" %}">Recipes</a>
                 </div>
             </div>
 
             <div class="nav-items nav-end">
                 <div>
-                    Logout
+                    <a href="{% url "recipe_site:logout" %}">
+                        Logout
+                    </a>
                 </div>
             </div>
         </div>
