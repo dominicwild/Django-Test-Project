@@ -1,14 +1,5 @@
 @import "base.scss";
-
-.errorlist.nonfield {
-  list-style: none;
-  text-align: left;
-  font-size: 0.75em;
-  color: black;
-  background-color: rgba(223, 79, 79, 0.28);
-  padding: 0.2em;
-  border-radius: 0.3em;
-}
+@import "error.scss";
 
 .logged-in-text {
   color: #027e17;
@@ -45,9 +36,10 @@ form {
     }
   }
 
-  .login-btn {
+  .login-buttons {
     margin-top: 0.5em;
     display: flex;
+    justify-content: space-between;
 
     input {
       padding: 0.25em 0.75em;

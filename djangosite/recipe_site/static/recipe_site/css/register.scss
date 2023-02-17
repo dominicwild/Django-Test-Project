@@ -1,0 +1,16 @@
+@import "error.scss";
+
+.form-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 0.5em;
+}
+
+.text-muted {
+  color: black;
+  opacity: 0.6;
+}

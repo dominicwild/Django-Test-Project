@@ -19,8 +19,9 @@
                 {{ form.password }}
             </div>
             {{ form.non_field_errors }}
-            <div class="login-btn">
+            <div class="login-buttons">
                 <input type="submit" value="Login">
+                <input type="submit" value="Register" onclick="window.location='{% url 'recipe_site:register' %}';">
             </div>
             <input type="hidden" name="next" value="{{ next }}">
             {% csrf_token %}

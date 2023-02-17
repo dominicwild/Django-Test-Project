@@ -1,0 +1,32 @@
+{% extends "recipe_site/landing_base.html" %}
+{% load static %}
+
+{% block headers %}
+    <link rel="stylesheet" href="{% static 'recipe_site/css/register.css' %}">
+{% endblock %}
+
+
+{% block card-content %}
+
+    <h1>Register</h1>
+
+    <form method="POST" action="{% url 'recipe_site:register' %}">
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.errors }}
+                <div class="form-input">
+                    {{ field.label_tag }}
+                    {{ field }}
+                </div>
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <div>
+            <input type="submit" value="Register">
+        </div>
+        {% csrf_token %}
+    </form>
+
+{% endblock %}
