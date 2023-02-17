@@ -1,39 +1,13 @@
 @import "normalize.css";
+@import "fonts.css";
 
 * {
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: Queensides;
-  src: url("../fonts/Queensides/Queensides.ttf");
-}
-
-@font-face {
-  font-family: Queensides;
-  src: url("../fonts/Queensides/QueensidesMedium.ttf");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: Queensides;
-  src: url("../fonts/Queensides/QueensidesLight.ttf");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: Monseratt;
-  src: url("../fonts/Monserrat/Montserrat-VariableFont_wght.ttf");
-}
-
-@font-face {
-  font-family: Monseratt;
-  src: url("../fonts/Monserrat/Montserrat-Italic-VariableFont_wght.ttf");
-  font-style: italic;
-}
-
-* {
   font-family: Monseratt, serif;
+}
+
+.logo {
+  font-family: Queensides, serif;
 }
 
 .unselectable {
@@ -42,3 +16,4 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Standard syntax */
 }
+
